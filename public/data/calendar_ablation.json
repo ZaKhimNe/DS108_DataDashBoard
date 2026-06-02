@@ -1,0 +1,20 @@
+{
+  "description": "Ablation study comparing 3 farming calendar feature sets on LightGBM baseline (Test AUC). A=synthetic rule-based, B=LLM-extracted USDA/PSD signals, C=hybrid both.",
+  "model": "claude-haiku-4-5",
+  "source_corn": "USDA QuickStats planting CSV (downloaded, 2010-2024)",
+  "source_coffee": "USDA PSD annual production data classified by LLM signal (bumper_crop_bullish → severe_stress_very_bearish)",
+  "rows": [
+    {"dataset": "coffee_daily",  "experiment": "A_synthetic", "label": "A — Synthetic", "test_auc": 0.4048, "test_prauc": 0.3472, "test_f1": 0.5609},
+    {"dataset": "coffee_daily",  "experiment": "B_llm_only",  "label": "B — LLM Only",  "test_auc": 0.3771, "test_prauc": 0.3160, "test_f1": 0.5605},
+    {"dataset": "coffee_daily",  "experiment": "C_hybrid",    "label": "C — Hybrid",    "test_auc": 0.4122, "test_prauc": 0.3404, "test_f1": 0.5609},
+    {"dataset": "coffee_weekly", "experiment": "A_synthetic", "label": "A — Synthetic", "test_auc": 0.4042, "test_prauc": 0.3054, "test_f1": 0.4643},
+    {"dataset": "coffee_weekly", "experiment": "B_llm_only",  "label": "B — LLM Only",  "test_auc": 0.4911, "test_prauc": 0.3270, "test_f1": 0.4974},
+    {"dataset": "coffee_weekly", "experiment": "C_hybrid",    "label": "C — Hybrid",    "test_auc": 0.4072, "test_prauc": 0.2819, "test_f1": 0.4541},
+    {"dataset": "corn_daily",    "experiment": "A_synthetic", "label": "A — Synthetic", "test_auc": 0.4752, "test_prauc": 0.2477, "test_f1": 0.3026},
+    {"dataset": "corn_daily",    "experiment": "B_llm_only",  "label": "B — LLM Only",  "test_auc": 0.4912, "test_prauc": 0.2618, "test_f1": 0.3475},
+    {"dataset": "corn_daily",    "experiment": "C_hybrid",    "label": "C — Hybrid",    "test_auc": 0.4866, "test_prauc": 0.2538, "test_f1": 0.2995},
+    {"dataset": "corn_weekly",   "experiment": "A_synthetic", "label": "A — Synthetic", "test_auc": 0.5979, "test_prauc": 0.3106, "test_f1": 0.4181},
+    {"dataset": "corn_weekly",   "experiment": "B_llm_only",  "label": "B — LLM Only",  "test_auc": 0.5476, "test_prauc": 0.3025, "test_f1": 0.4181},
+    {"dataset": "corn_weekly",   "experiment": "C_hybrid",    "label": "C — Hybrid",    "test_auc": 0.5261, "test_prauc": 0.2652, "test_f1": 0.4181}
+  ]
+}
